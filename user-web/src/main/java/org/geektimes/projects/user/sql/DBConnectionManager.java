@@ -90,6 +90,14 @@ public class DBConnectionManager {
         execute(connection, INSERT_USER_DML_SQL_TEST,
                  COMMON_EXCEPTION_HANDLER, "111", "111", "111", "111");
 
+        User u =  executeQuery(connection, "SELECT id,name,password,email,phoneNumber FROM users WHERE name=? and password=?",
+                resultSet -> {
+                    if(resultSet.next()){
+                        return pack2User(resultSet);
+                    }
+                    return null;
+                }, COMMON_EXCEPTION_HANDLER, "111", "111");
+        System.out.println(u);
 
         // 执行查询语句（DML）
         ResultSet resultSet = statement.executeQuery("SELECT id,name,password,email,phoneNumber FROM users");
@@ -234,5 +242,27 @@ public class DBConnectionManager {
             exceptionHandler.accept(e);
         }
         return false;
+    }
+
+    private static User pack2User(ResultSet resultSet) throws Throwable{
+        User user = new User();
+        BeanInfo userBeanInfo = Introspector.getBeanInfo(User.class, Object.class);
+        for (PropertyDescriptor propertyDescriptor : userBeanInfo.getPropertyDescriptors()) {
+            String fieldName = propertyDescriptor.getName();
+            Class fieldType = propertyDescriptor.getPropertyType();
+            String methodName = typeMethodMappings.get(fieldType);
+            // 可能存在映射关系（不过此处是相等的）
+            String columnLabel = mapColumnLabel(fieldName);
+            Method resultSetMethod = ResultSet.class.getMethod(methodName, String.class);
+            // 通过放射调用 getXXX(String) 方法
+            Object resultValue = resultSetMethod.invoke(resultSet, columnLabel);
+            // 获取 User 类 Setter方法
+            // PropertyDescriptor ReadMethod 等于 Getter 方法
+            // PropertyDescriptor WriteMethod 等于 Setter 方法
+            Method setterMethodFromUser = propertyDescriptor.getWriteMethod();
+            // 以 id 为例，  user.setId(resultSet.getLong("id"));
+            setterMethodFromUser.invoke(user, resultValue);
+        }
+        return user;
     }
 }
