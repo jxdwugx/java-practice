@@ -19,7 +19,7 @@ import java.io.Console;
 @Path("/user")
 public class UserController implements PageController {
 
-    private UserService userService = new UserServiceImpl();
+    private UserService userService;
 
     @Override
     @GET
@@ -30,8 +30,15 @@ public class UserController implements PageController {
         user.setEmail(request.getParameter("email"));
         user.setPassword(request.getParameter("password"));
         user.setPhoneNumber(request.getParameter("phoneNumber"));
+        assertStatus();
         userService.register(user);
         System.out.println(userService.queryUserByNameAndPassword(request.getParameter("userName"), request.getParameter("password")));
         return "home.jsp";
+    }
+
+    private void assertStatus(){
+        if(userService == null){
+            userService = new UserServiceImpl();
+        }
     }
 }

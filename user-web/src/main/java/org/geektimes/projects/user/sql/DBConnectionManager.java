@@ -1,19 +1,18 @@
 package org.geektimes.projects.user.sql;
 
 import org.geektimes.function.ThrowableFunction;
+import org.geektimes.projects.user.context.JNDIComponentContext;
 import org.geektimes.projects.user.domain.User;
 
+import javax.sql.DataSource;
 import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
-import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 import java.util.function.Consumer;
-import java.util.logging.Level;
 
 import static org.apache.commons.lang.ClassUtils.wrapperToPrimitive;
 
@@ -27,16 +26,22 @@ public class DBConnectionManager {
         this.connection = connection;
     }
 
-    public Connection getConnection() {
-        if(connection == null){
-            String databaseURL = "jdbc:derby:/db/user-platform;create=true";
-            try {
-                this.connection = DriverManager.getConnection(databaseURL);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+    public Connection getConnection(){
+        JNDIComponentContext componentContext = JNDIComponentContext.getInstance();
+        Connection connection = null;
+        try {
+            DataSource ds = componentContext.getComponent("jdbc/UserPlatformDB");
+            connection = ds.getConnection();
+        }catch (SQLException e){
+            e.printStackTrace();
         }
-        return this.connection;
+        if(connection != null){
+            System.out.println("获取 JDNI 数据库连接成功");
+        }else {
+            System.out.println("获取 JDNI 数据库连接失败");
+        }
+
+        return connection;
     }
 
     public void releaseConnection() {
