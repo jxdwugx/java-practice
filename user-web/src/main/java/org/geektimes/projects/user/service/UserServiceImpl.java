@@ -1,5 +1,6 @@
 package org.geektimes.projects.user.service;
 
+import org.geektimes.projects.user.context.ComponentContext;
 import org.geektimes.projects.user.domain.User;
 import org.geektimes.projects.user.repository.DatabaseUserRepository;
 import org.geektimes.projects.user.repository.UserRepository;
@@ -46,7 +47,7 @@ public class UserServiceImpl implements UserService{
 
     private void assertStatus(){
         if(userRepository == null){
-            userRepository = new DatabaseUserRepository();
+            userRepository = ComponentContext.getInstance().getComponent("bean/DataBaseUserRepository");
         }
     }
 

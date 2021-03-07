@@ -1,10 +1,12 @@
 package org.geektimes.projects.user.repository;
 
 import org.geektimes.function.ThrowableFunction;
-import org.geektimes.projects.user.context.JNDIComponentContext;
+import org.geektimes.projects.user.context.ComponentContext;
 import org.geektimes.projects.user.domain.User;
 import org.geektimes.projects.user.sql.DBConnectionManager;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
@@ -55,11 +57,17 @@ public class DatabaseUserRepository implements UserRepository {
 
     public static final String QUERY_ALL_USERS_DML_SQL = "SELECT id,name,password,email,phoneNumber FROM users";
 
-    private final DBConnectionManager dbConnectionManager;
+    @Resource(name = "bean/DBConnectionManager")
+    private DBConnectionManager dbConnectionManager;
 
     public DatabaseUserRepository() {
-        System.out.println("JNDIComponentContext" + JNDIComponentContext.getInstance());
-        this.dbConnectionManager = JNDIComponentContext.getInstance().getComponent("bean/DBConnectionManager");
+        System.out.println("ComponentContext" + ComponentContext.getInstance());
+        this.dbConnectionManager = ComponentContext.getInstance().getComponent("bean/DBConnectionManager");
+    }
+
+    @PostConstruct
+    public void postConstruct(){
+        System.out.println("PostConstruct");
     }
 
     private Connection getConnection() {

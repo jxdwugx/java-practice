@@ -1,7 +1,7 @@
 package org.geektimes.projects.user.sql;
 
 import org.geektimes.function.ThrowableFunction;
-import org.geektimes.projects.user.context.JNDIComponentContext;
+import org.geektimes.projects.user.context.ComponentContext;
 import org.geektimes.projects.user.domain.User;
 
 import javax.sql.DataSource;
@@ -27,7 +27,7 @@ public class DBConnectionManager {
     }
 
     public Connection getConnection(){
-        JNDIComponentContext componentContext = JNDIComponentContext.getInstance();
+        ComponentContext componentContext = ComponentContext.getInstance();
         Connection connection = null;
         try {
             DataSource ds = componentContext.getComponent("jdbc/UserPlatformDB");

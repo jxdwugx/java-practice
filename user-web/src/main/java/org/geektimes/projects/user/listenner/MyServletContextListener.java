@@ -1,6 +1,6 @@
 package org.geektimes.projects.user.listenner;
 
-import org.geektimes.projects.user.context.JNDIComponentContext;
+import org.geektimes.projects.user.context.ComponentContext;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -19,7 +19,7 @@ public class MyServletContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         servletContext = servletContextEvent.getServletContext();
-        JNDIComponentContext context = new JNDIComponentContext();
+        ComponentContext context = new ComponentContext();
         context.init(servletContext);
     }
 

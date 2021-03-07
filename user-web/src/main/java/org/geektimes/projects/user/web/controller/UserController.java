@@ -1,5 +1,6 @@
 package org.geektimes.projects.user.web.controller;
 
+import org.geektimes.projects.user.context.ComponentContext;
 import org.geektimes.projects.user.domain.User;
 import org.geektimes.projects.user.service.UserService;
 import org.geektimes.projects.user.service.UserServiceImpl;
@@ -38,7 +39,7 @@ public class UserController implements PageController {
 
     private void assertStatus(){
         if(userService == null){
-            userService = new UserServiceImpl();
+            userService =  ComponentContext.getInstance().getComponent("bean/UserService");
         }
     }
 }
