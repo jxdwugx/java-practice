@@ -1,22 +1,37 @@
 package org.geektimes.projects.user.domain;
 
+import javax.persistence.*;
+import javax.validation.constraints.*;
+import java.io.Serializable;
 import java.util.Objects;
+
+import static javax.persistence.GenerationType.AUTO;
 
 /**
  * 用户领域对象
  *
  * @since 1.0
  */
-public class User {
+@Entity
+@Table(name = "users")
+public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = AUTO)
     private Long id;
 
+    @Column
     private String name;
 
+    @Column
+    @Size(max = 32, min = 6)
     private String password;
 
+    @Column
     private String email;
 
+    @Column
+    @Pattern(regexp = "^((13[0-9])|(14[0,1,4-9])|(15[0-3,5-9])|(16[2,5,6,7])|(17[0-8])|(18[0-9])|(19[0-3,5-9]))\\d{8}$")
     private String phoneNumber;
 
     public Long getId() {

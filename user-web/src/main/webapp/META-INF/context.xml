@@ -19,4 +19,14 @@
 	<Resource name="bean/UserService" auth="Container"
 			  type="org.geektimes.projects.user.service.UserServiceImpl"
 			  factory="org.apache.naming.factory.BeanFactory"/>
+
+	<Resource name="bean/EntityManager" auth="Container"
+			  type="org.geektimes.projects.user.jpa.DelegatingEntityManager"
+			  persistenceUnitName="emf"
+			  propertiesLocation="META-INF/jpa-datasource.properties"
+			  factory="org.apache.naming.factory.BeanFactory" />
+
+	<Resource name="bean/Validator" auth="Container"
+			  type="org.geektimes.projects.user.validator.DelegatingValidator"
+			  factory="org.apache.naming.factory.BeanFactory" />
 </Context>

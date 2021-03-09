@@ -174,6 +174,8 @@ public class ComponentContext {
         try {
             result = ThrowableFunction.execute(context, function);
         } catch (Throwable e) {
+            System.out.println(e.getMessage());
+            System.out.println(e.getCause());
             if (ignoredException) {
                 logger.warning(e.getMessage());
             } else {

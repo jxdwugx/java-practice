@@ -32,7 +32,10 @@ public class UserController implements PageController {
         user.setPassword(request.getParameter("password"));
         user.setPhoneNumber(request.getParameter("phoneNumber"));
         assertStatus();
-        userService.register(user);
+        boolean flag = userService.register(user);
+        if(!flag){
+            return "error.jsp";
+        }
         System.out.println(userService.queryUserByNameAndPassword(request.getParameter("userName"), request.getParameter("password")));
         return "home.jsp";
     }

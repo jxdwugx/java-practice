@@ -1,6 +1,10 @@
+D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\validator\BeanValidationDemo.java
+D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\validator\DelegatingValidator.java
+D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\validator\UserValidAnnotationValidator.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\repository\DatabaseUserRepository.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\service\UserService.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\web\controller\UserController.java
+D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\jpa\DelegatingEntityManager.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\repository\InMemoryUserRepository.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\context\ComponentContext.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\web\filter\CharsetEncodingFilter.java
@@ -9,7 +13,9 @@ D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\p
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\domain\User.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\service\UserServiceImpl.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\function\ThrowableAction.java
+D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\validator\UserValid.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\sql\DBConnectionManager.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\web\listener\DBConnectionInitializerListener.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\function\ThrowableFunction.java
+D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\jpa\JpaDemo.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\repository\UserRepository.java

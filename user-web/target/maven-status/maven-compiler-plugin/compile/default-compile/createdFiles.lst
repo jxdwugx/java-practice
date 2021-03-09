@@ -1,3 +1,13 @@
+org\geektimes\projects\user\validator\UserValid.class
+org\geektimes\projects\user\validator\BeanValidationDemo.class
+org\geektimes\projects\user\jpa\JpaDemo.class
+org\geektimes\projects\user\repository\InMemoryUserRepository.class
+org\geektimes\projects\user\validator\UserValidAnnotationValidator.class
+org\geektimes\projects\user\web\controller\UserController.class
+org\geektimes\projects\user\listenner\MyServletContextListener.class
+org\geektimes\projects\user\service\UserServiceImpl.class
+org\geektimes\function\ThrowableAction.class
+org\geektimes\projects\user\jpa\DelegatingEntityManager.class
 org\geektimes\projects\user\repository\UserRepository.class
 org\geektimes\projects\user\sql\DBConnectionManager.class
 org\geektimes\projects\user\web\filter\CharsetEncodingFilter.class
@@ -5,11 +15,7 @@ org\geektimes\projects\user\service\UserService.class
 org\geektimes\projects\user\context\ComponentContext.class
 org\geektimes\function\ThrowableFunction.class
 org\geektimes\projects\user\web\controller\HelloWorldController.class
-org\geektimes\projects\user\repository\InMemoryUserRepository.class
-org\geektimes\projects\user\web\controller\UserController.class
-org\geektimes\projects\user\listenner\MyServletContextListener.class
+org\geektimes\projects\user\validator\DelegatingValidator.class
 org\geektimes\projects\user\web\listener\DBConnectionInitializerListener.class
 org\geektimes\projects\user\domain\User.class
-org\geektimes\projects\user\service\UserServiceImpl.class
-org\geektimes\function\ThrowableAction.class
 org\geektimes\projects\user\repository\DatabaseUserRepository.class
