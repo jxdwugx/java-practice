@@ -1,8 +1,10 @@
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\validator\BeanValidationDemo.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\validator\DelegatingValidator.java
+D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\mbean\UserManagerMBean.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\validator\UserValidAnnotationValidator.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\repository\DatabaseUserRepository.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\service\UserService.java
+D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\mbean\UserManager.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\web\controller\UserController.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\jpa\DelegatingEntityManager.java
 D:\javaÑµÁ·Óª\java-practice\java-practice\user-web\src\main\java\org\geektimes\projects\user\repository\InMemoryUserRepository.java
